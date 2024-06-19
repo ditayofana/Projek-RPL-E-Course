@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registrasi</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        background: #333;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      form {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        padding: 40px;
+        max-width: 400px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333;
+        text-align: center;
+      }
+      label {
+        font-size: 14px;
+        margin-bottom: 5px;
+        display: block;
+        color: #666;
+      }
+      input[type="text"],
+      input[type="password"],
+      input[type="email"],
+      select {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 14px;
+      }
+      input[type="submit"],
+      input[type="reset"],
+      button {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 12px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 20px;
+        width: 100%;
+        box-sizing: border-box;
+        transition: background-color 0.3s ease;
+      }
+      input[type="submit"]:hover,
+      input[type="reset"]:hover,
+      button:hover {
+        background-color: #333;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      .login-link {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .login-link a {
+        color: #2575fc;
+        text-decoration: none;
+      }
+      .login-link a:hover {
+        text-decoration: underline;
+      }
+    </style>
+    <script>
+      function validateForm() {
+        var password = document.getElementById("password").value;
+        var repeat_password = document.getElementById("repeat_password").value;
+        if (password != repeat_password) {
+          alert("Ulangi, Password Anda Tidak Sama!");
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form
+      action="registrasi.php"
+      method="post"
+      onsubmit="return validateForm()"
+    >
+    <br>
+    <br>
+    <br><br> <br> <br><br>
+    <br><br>
+      <h1>REGISTER</h1>
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+      <div class="form-group">
+        <label for="repeat_password">Ulangi Password:</label>
+        <input
+          type="password"
+          id="repeat_password"
+          name="repeat_password"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="fullname">Nama Lengkap:</label>
+        <input type="text" id="fullname" name="fullname" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="level">Level:</label>
+        <select id="level" name="level">
+          <option value="Admin">Admin</option>
+          <option value="User">User</option>
+        </select>
+      </div>
+      <input type="submit" value="Submit" />
+      <input type="reset" value="Reset" />
+      <div class="login-link">
+        <a href="login.html">Login</a>
+      </div>
+    </form>
+    <br><br><br><br><br>
+  </body>
+</html>
